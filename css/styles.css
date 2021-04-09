@@ -9,6 +9,7 @@
   --header-border-color: #ececec;
   --border-color: #eeeeee;
   --card-set-gap: 30px;
+  --border-client-color: #afb1b8;
 }
 
 body {
@@ -62,6 +63,7 @@ p {
   padding: 0;
   margin: 0;
 }
+
 /* /LIST */
 
 /* LINK */
@@ -183,8 +185,6 @@ p {
 .hero {
   background-color: var(--bg-color-footer);
   text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
 }
 .hero-title {
   font-weight: 900;
@@ -195,6 +195,23 @@ p {
   color: var(--text-color-on-dark);
   margin-top: 0px;
   margin-bottom: 30px;
+}
+
+.overlay {
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/bg-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 /* /Hero */
 
@@ -268,6 +285,8 @@ p {
 .team-list .text {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .team-list .element {
   width: 270px;
@@ -275,7 +294,53 @@ p {
 .team-list .element:not(:last-child) {
   margin-right: 30px;
 }
+
+.text .about {
+  margin-bottom: 16px;
+}
+
+.social-list {
+  display: flex;
+  text-align: center;
+}
+.social-list .item {
+  display: flex;
+}
+
+.social-list .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list .social-link {
+  display: flex;
+  height: 44px;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
 /* /Team */
+
+/* Clients */
+.client-list {
+  display: flex;
+  justify-content: center;
+}
+.client-list .item {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border: 1px solid var(--border-client-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.client-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+/* /Clients */
 
 /* Buttons */
 .btn-order {
