@@ -9,7 +9,10 @@
   --header-border-color: #ececec;
   --border-color: #eeeeee;
   --card-set-gap: 30px;
-  --border-client-color: #afb1b8;
+  --icon-color: #afb1b8;
+  --icon-background-color-footer: rgba (255, 255, 255, 0.1);
+  --shadow-cards: 0px 2px 1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -162,6 +165,16 @@ p {
   color: currentColor;
 }
 
+.link-contacts {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 .link-contacts:hover,
 .link-contacts:focus {
   color: var(--accent-color);
@@ -176,6 +189,14 @@ p {
 
 .contacts .item + .item {
   margin-left: 50px;
+}
+
+.link-contacts .link {
+  display: flex;
+}
+.contacts-icon {
+  display: flex;
+  flex-direction: row;
 }
 /* /Header */
 
@@ -198,6 +219,7 @@ p {
 }
 
 .overlay {
+  box-sizing: border-box;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -205,7 +227,8 @@ p {
     ),
     url(../images/bg-hero.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   height: 600px;
   max-width: 1600px;
   margin-left: auto;
@@ -254,6 +277,24 @@ p {
 .advantage:not(:last-child) {
   margin-right: 30px;
 }
+
+/* .advantage::before {
+
+ 
+  min-height: 110px;
+
+  margin-bottom: 10px;
+
+}
+*/
+.advantage-icon {
+  display: block;
+  background-color: var(--secondary-bg-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
 /* /advantage */
 
 /* Work */
@@ -290,6 +331,8 @@ p {
 }
 .team-list .element {
   width: 270px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-cards);
 }
 .team-list .element:not(:last-child) {
   margin-right: 30px;
@@ -317,29 +360,64 @@ p {
   width: 44px;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+}
+
+.team-list .social-link:hover,
+.team-list .social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-icon {
+  fill: var(--icon-color);
+}
+
+.team-list .social-link:hover .social-icon,
+.team-list .social-link:focus .social-icon {
+  fill: var(--text-color-on-dark);
 }
 
 /* /Team */
 
 /* Clients */
-.client-list {
+.clients-list {
   display: flex;
   justify-content: center;
 }
-.client-list .item {
+.clients-list .item {
   display: flex;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 32px;
   padding-right: 32px;
-  border: 1px solid var(--border-client-color);
+  border: 1px solid var(--icon-color);
   box-sizing: border-box;
   border-radius: 4px;
 }
 
-.client-list .item:not(:last-child) {
+.clients-list .item:not(:last-child) {
   margin-right: 30px;
 }
+
+.clients-list .clients-link {
+  display: flex;
+  align-items: center;
+}
+
+.clients-icon {
+  fill: var(--icon-color);
+}
+
+.clients-list .item:hover,
+.clients-list .item:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.clients-list .item:hover .clients-icon,
+.clients-list .item:focus .clients-icon {
+  fill: var(--accent-color);
+}
+
 /* /Clients */
 
 /* Buttons */
@@ -365,6 +443,7 @@ p {
 .btn-filters:focus {
   background-color: var(--accent-color);
   color: var(--text-color-on-dark);
+  box-shadow: var(--shadow-cards);
 }
 /* /Buttons */
 
@@ -390,6 +469,10 @@ p {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
+}
+
+.cards-list .element:hover {
+  box-shadow: var(--shadow-cards);
 }
 
 .cards-list .title {
@@ -419,10 +502,38 @@ p {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
 .footer .container {
   display: flex;
-  flex-direction: column;
 }
+
+.footer-left-block {
+  margin-right: 40px;
+}
+
+.footer-right-block {
+  text-align: center;
+}
+.footer-right-block .title {
+  color: var(--text-color-on-dark);
+}
+
+.footer-right-block .social-list .item {
+  border-radius: 50%;
+  background-color: var(--primary-text-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.footer-right-block .social-list .item:hover,
+.footer-right-block .social-list .item:focus {
+  background-color: var(--accent-color);
+}
+.footer .social-icon {
+  fill: var(--text-color-on-dark);
+}
+
 .footer .logo {
   margin-bottom: 20px;
 }
@@ -438,6 +549,7 @@ p {
 .footer-address .link-contacts {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .footer-address .item:not(:last-child) {
   margin-bottom: 9px;
 }
