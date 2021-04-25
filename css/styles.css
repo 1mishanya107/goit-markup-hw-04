@@ -13,6 +13,10 @@
   --icon-background-color-footer: rgba(255, 255, 255, 0.1);
   --shadow-cards: 0px 2px 1px rgba(0, 0, 0, 0.2),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-cards-element: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  --shadow-button: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -86,7 +90,7 @@ p {
   border-radius: 4px;
 }
 
-.button.primary {
+.primary {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.875;
@@ -98,7 +102,7 @@ p {
   padding: 10px 32px;
 }
 
-.button.secondary {
+.secondary {
   letter-spacing: 0.03em;
   background-color: var(--secondary-bg-color);
   color: var(--title-text-color);
@@ -302,11 +306,12 @@ p {
 /* /advantage */
 
 /* Work */
-.work {
+.work-list {
   display: flex;
   justify-content: space-between;
 }
-.work img {
+
+.work-example {
   display: block;
 }
 /* /Work */
@@ -433,8 +438,11 @@ p {
   margin-right: 8px;
 }
 
-.btn-filters {
+.btn .btn-filters {
   font-weight: 500;
+  background-color: var(--secondary-bg-color);
+  color: var(--title-text-color);
+  box-shadow: none;
 }
 
 .filters {
@@ -443,11 +451,11 @@ p {
   margin-bottom: 50px;
 }
 
-.btn-filters:hover,
-.btn-filters:focus {
+.btn .btn-filters:hover,
+.btn .btn-filters:focus {
   background-color: var(--accent-color);
   color: var(--text-color-on-dark);
-  box-shadow: var(--shadow-cards);
+  box-shadow: var(--shadow-button);
 }
 /* /Buttons */
 
@@ -455,7 +463,7 @@ p {
 .element {
   background-color: var(--primary-bg-color);
 }
-.element img {
+.element .photo {
   display: block;
 }
 /* /Elements */
@@ -476,7 +484,7 @@ p {
 }
 
 .cards-list .element:hover {
-  box-shadow: var(--shadow-cards);
+  box-shadow: var(--shadow-cards-element);
 }
 
 .cards-list .title {
@@ -558,12 +566,12 @@ p {
   text-align: left;
 }
 
-.footer-right-block .social-list .item {
+.footer-right-block .item {
   background-color: var(--icon-background-color-footer);
 }
 
-.footer-right-block .social-list .item:hover,
-.footer-right-block .social-list .item:focus {
+.footer-right-block .item:hover,
+.footer-right-block .item:focus {
   background-color: var(--accent-color);
 }
 .footer .social-icon {
